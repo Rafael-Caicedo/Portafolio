@@ -1,0 +1,171 @@
+/*Nos permite importar las fuentes de letras*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{ /*Se utiliza para eliminar los estilos por defecto de los navegadores*/
+    margin: 0;
+    padding: 0;
+}
+
+/*se declaran las variables globales*/
+:root{
+   --color-primario: #EEEEEE;
+   --color-secundario: #240750;
+   --color-terciario: #151515;
+
+   --fuente-monserat: "Montserrat", sans-serif;
+   --fuente-krona: "Krona One", sans-serif;
+}
+
+/*Bloque donde se modifica el cuerpo de la pagina*/
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    /*height: 100vh;*/
+    box-sizing: border-box;
+}
+
+.header{
+ /*padding-top: 3%;
+ padding-right: 0px;
+ padding-bottom: 0px;
+ padding-left: 360px;
+ /*para abreviar el paddin ponemos colocar padding: [top right botton left]*/
+padding: 2% 0 0 15%;
+}
+
+.header__menu{
+display: flex;
+gap: 80px; /*distancia entre el 'inicio' y 'Sobre mi'*/
+}
+
+.header__menu__link{
+   font-family: var(--fuente-monserat);
+    font-weight: 600;
+    font-size: 1.5rem; /*1rem = 16px; entonces (24px*1rem)/16px = 1.5rem*/
+    color: var(--color-terciario);
+    text-decoration:none;
+}
+
+ 
+
+ .presentacion{
+    display: flex; /*habilitamos el contexto flexible */
+    align-items: center;/*para alinear elementos al centro*/
+    justify-content:space-between; /*Se utiliza para apicar espacios entre objetos*/
+    /*padding-top: 5%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding-left: 15%;
+   /*para abreviar el paddin ponemos colocar padding: [top right botton left]*/
+    padding: 5% 15%; 
+    gap: 82px;
+    
+ }
+
+ .presentacion_contenido{
+    width: 80%;
+    display: flex;
+    /*align-items: center;*/
+    flex-direction: column;
+    gap: 40px; /*se utiliza el gap para dar espacion entre los bloques*/
+    /*padding: 5% 355px; */
+ } 
+ 
+ .presentacion_contenido_titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona) /*Se llama a la fuente*/
+ }
+
+ .tituloResaltado{
+   color: var(--color-terciario);
+}
+
+ .presentacion_contenido_parrafo{
+    font-size: 1.5rem;
+    font-family: var(--fuente-monserat);
+ }
+
+ .presentacion_enlaces{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   gap: 32px;
+
+ }
+
+ .presentacion_enlaces_titulo{
+   font-size: 1.5rem;
+   font-family: var(--fuente-krona);/*Se llama a la fuente*/
+   font-weight: 400px;
+ }
+
+ .presentacion_enlaces_link{
+    display: flex;
+    justify-content: center;
+    width: 80%; /*ancho de los botones*/ 
+    background-color: var(--color-primario);
+    text-align: center; /*Alinear texto al centro*/
+    padding: 21.5px 0; /*se utiliza en esta forma para indicarle valores de [espacio-vertical  espacio-horizontal]*/
+    border-radius: 8px; /*se aplica este comando para indicar el valor que tiene el borde del radio del boton*/
+    font-family: var(--fuente-monserat);
+    font-weight: 600;
+    font-size: 1.5rem;
+    /*border-style: solid; /*se utiliza para agregar un borde solido al boton
+    border-width: 2px; se utiliza para agregar el ancho del borde
+    border-color: #22D4FD; se utiliza para agregar el color del borde*/
+    border: 2px solid var(--color-terciario);/*Se utiliza boder solo para simplificar y reducir la expresiones anteriores*/
+    text-decoration: none; /*Se utiliza para quitar el subrayado del texto de los botones*/
+    color: var(--color-secundario); 
+    gap: 16px;
+}
+
+   /*se utiliza el "hover" para que el boton cambie de color al momento de poner el cursor sobre el*/
+   .presentacion_enlaces_link:hover{
+      background-color: #272727;
+      cursor:pointer; /*se utiliza para cambiar el estilo del cursor cuando esta sobre el boton*/
+   }
+
+   .imagen{
+      width: 50%;
+   }
+
+   .footer{
+
+    /*width: 1920px; /*ancho de los botones*/
+    padding: 23.64px;
+    font-family: var(--fuente-monserat);
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    background-color: var(--color-terciario);
+    text-align: center;
+
+
+   }
+
+   /*en esta ´parte del codigo vamos a emplear el Media Query para adapartar nuestra pantalla web a cualquier dispositivo*/
+   @media (max-width: 1100px) {  /*ancho maximo de pantalla 1100 pixeles*/
+      
+      .presentacion {
+        flex-direction: column-reverse; /*orientamos el bloque se "presentacion" en columnas, pero se le pone reverse para que nos coloque la imagen encima de las letras */
+         padding: 6%;
+         
+      }
+
+      .presentacion_contenido{
+         width: auto; 
+      }
+      
+      .header{
+        padding: 10%;
+      }
+        
+      .header__menu{ 
+        justify-content: center;
+      }
+   
+      
+   
+   }
+
